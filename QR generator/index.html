@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>QR Generator</title>
+
+  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header id="header">
+  <img id="logo" src="lgmf.png" alt="logo">
+  <h1>DATA ENTRY</h1>
+</header>
+
+<section id="content">
+
+  <div>
+
+    <form id="qrForm" onsubmit="return false;">
+
+      <div class="inputContainer">
+
+        <label for="dataInput">ID</label>
+        <input type="text" onchange="updateQrData();" name="dataInput" id="idno" required />
+
+        <label for="dataInput">Name</label>
+        <input type="text" onchange="updateQrlastname();" name="dataInput" id="name" required />
+
+        <label for="dataInput">Date of Birth</label>
+        <input type="date" onchange="updateQrdob();" name="dataInput" id="dob" placeholder="01/01/2001" required />
+
+        <label for="dataInput">Designation</label>
+        <input type="text" onchange="updateQrnat();" name="dataInput" id="designation" required />
+
+        <label for="dataInput">Phone Number</label>
+        <input type="number" onchange="updateQrnat();" name="dataInput" id="phone" required />
+
+        <label for="dataInput">Email</label>
+        <input type="email" onchange="updateQrblank();" name="dataInput" id="email" required />
+
+      </div>
+
+      <div class="inputContainer">
+
+        <label for="imageInput">Image</label>
+
+        <input type="file" onchange="updateQrImg();" name="imageInput" id="imageInput" accept="image/*"  />
+
+      </div>
+
+      <div class="inputContainer">
+
+        <label for="colorInput">Color</label>
+
+        <input type="color" onchange="updateQrColor();" name="colorInput" id="colorInput" />
+
+      </div>
+
+      <div class="inputContainer">
+
+        <label for="typeInput">Type</label>
+
+        <select name="typeInput" id="typeInput" onchange="updateQrType();">
+
+          <option value="square">Square</option>
+
+          <option value="rounded">Rounded</option>
+
+          <option value="dots">Dots</option>
+
+        </select>
+
+      </div>
+
+    </form>
+
+    <button id="formButton" onclick="download();">Download</button>
+
+  </div>
+
+  <div id="canvas"></div>
+
+</section>
+
+<script type="text/javascript" src="qr.js"></script>
+
+</body>
+
+</html>
